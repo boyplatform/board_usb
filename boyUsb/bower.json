@@ -1,0 +1,22 @@
+{
+  "name": "boy-usb",
+  "description": "usb,One repo of boy distribute modality platform. Support receive request from all the frontend UI or devices such as andriod,h5,ios,iot devices,pub webAPI and so on so that all the API exported to frontend will work under a same page and get more security.",
+  "main": "webApi/boyUsbEntry.js",
+  "authors": [
+    "boybian <coldboardcoldtree@126.com>"
+  ],
+  "license": "MPL(Mozilla Public License1.1)",
+  "keywords": [
+    "usb",
+    "distribute platform usb",
+    "分布式平台总线"
+  ],
+  "homepage": "https://github.com/boyplatform/usb",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
