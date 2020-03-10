@@ -61,8 +61,8 @@ CrystalClusterInfoRecord.prototype.crystalClusterBlockUpdate=function(crystalClu
 CrystalClusterInfoRecord.prototype.crystalClusterBlockMasterUpdate=function(crystalClusterBlock){
     
     UsbDb.dbType = 'mysql';
-    UsbDb.mysqlParameter.common.sql ="update crystalClusterBlock set crstalNodeRole=? where crystalNodeGuid=?";
-    UsbDb.mysqlParameter.common.params=[crystalClusterBlock.crstalNodeRole,crystalClusterBlock.crystalNodeGuid];
+    UsbDb.mysqlParameter.common.sql ="update crystalClusterBlock set crstalNodeRole=? where crystalNodeIp=?";
+    UsbDb.mysqlParameter.common.params=[crystalClusterBlock.crstalNodeRole,crystalClusterBlock.crystalNodeIp];
     UsbDb.mysqlParameter.common.callBack = function (err, success, affectedRows)
     {
         if (err) {
