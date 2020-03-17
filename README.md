@@ -11,4 +11,4 @@ usb,One repo of boy distribute modality platform. Support receive platform opera
 3.usb can be deployed at your cloud services or your bussiness terminals flexibly.
 
 #Current bussiness DB type supported by this micro-service role
-MySql
+MySql,MsSql
