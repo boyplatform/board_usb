@@ -33,7 +33,10 @@ app.all('*', function(req, res, next) {
 
 //Programe Entry
 var server=app.listen(8080,'0.0.0.0',function(){
- 
+      //internet模式下启动时初始化并缓存本机公网IP
+      if(conf.platformArch.crystalCluster.CrystalClusterNetworkMode==="internet"){
+            boyUsbCommon.initCurrentServerPubIpAdress();
+      }
      console.log('Intelligent boy-usb is running on current crystal node at:'+(new Date()).toLocaleString()," on IP:",boyUsbCommon.getCurrentServerIpAdress().trim());
      memoryNodeCache.setConn({});
       
