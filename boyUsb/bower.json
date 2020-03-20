@@ -11,7 +11,7 @@
     "distribute platform usb",
     "分布式平台总线"
   ],
-  "homepage": "https://github.com/boyplatform/usb",
+  "homepage": "https://github.com/boyplatform/board_usb",
   "ignore": [
     "**/.*",
     "node_modules",
