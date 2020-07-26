@@ -45,7 +45,8 @@ UserManagement.prototype.AddUser=async function(req,res){
                             "#systemRole":req.body.systemRole,
                             "#createTime":boyUsbCommon.GetFormatDateFromTimeSpan(Date.now()) 
                         },
-                        "blockVerifyOrNot":false
+                        "blockVerifyOrNot":false,
+                        "reqStorageClusterDbType":0 //mysql=0 mssql=1
                     
                     };
                 
@@ -120,7 +121,8 @@ UserManagement.prototype.updateUser=async function(req,res){
                             "#systemRole":req.body.systemRole,
                             "#platformUserGuid":req.body.platformUserGuid 
                       },
-                      "blockVerifyOrNot":false
+                      "blockVerifyOrNot":false,
+                      "reqStorageClusterDbType":0 //mysql=0 mssql=1
                 
                 };
           
@@ -190,7 +192,8 @@ UserManagement.prototype.deleteUser=async function(req,res){
                       {
                             "#platformUserGuid":req.body.platformUserGuid 
                       },
-                      "blockVerifyOrNot":false
+                      "blockVerifyOrNot":false,
+                      "reqStorageClusterDbType":0 //mysql=0 mssql=1
                 
                 };
           
@@ -262,9 +265,9 @@ UserManagement.prototype.selectUser=async function(req,res){
                        "cacheGenMethod":"3",
                        "ttl":"200",
                        "querySql":"call selectUser ('#platformUserNameLike')",
-                       "querySqlParameter":{"#platformUserNameLike":req.body.platformUserNameLike}//,
+                       "querySqlParameter":{"#platformUserNameLike":req.body.platformUserNameLike},//,
                        //"mocktype":"nodeCacheOperator"   //nodeCacheOperator，memCacheOperator,redisCacheOperator,localFeedDiskOperator
-                
+                       "reqStorageClusterDbType":0 //mysql=0 mssql=1
                       };
            
                  boyUsbCommon.aes256Encryption(key,times,JSON.stringify(precmd),function(value){
@@ -337,9 +340,9 @@ UserManagement.prototype.userLogin=async function(req,res){
                        "querySqlParameter":{
                              "#platformUserName":req.body.platformUserName,
                              "#platformUserPwd":boyUsbCommon.getMd5(req.body.platformUserPwd)
-                        }//,
+                        },//,
                        //"mocktype":"nodeCacheOperator"   //nodeCacheOperator，memCacheOperator,redisCacheOperator,localFeedDiskOperator
-                
+                       "reqStorageClusterDbType":0 //mysql=0 mssql=1
                       };
            
                  boyUsbCommon.aes256Encryption(key,times,JSON.stringify(precmd),function(value){
